@@ -37,7 +37,10 @@ Task.propTypes = {
   /** Composition of the task */
   task: PropTypes.shape({
     /** Id of the task */
-    id: PropTypes.string.isRequired,
+    id: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]).isRequired,
     /** Title of the task */
     title: PropTypes.string.isRequired,
     /** Current state of the task */
